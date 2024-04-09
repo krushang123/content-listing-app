@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Titillium_Web } from 'next/font/google';
 import './globals.css';
 import { ReactNode } from 'react';
 import { Providers } from '@/src/providers';
@@ -8,7 +8,13 @@ interface RootLayoutProps {
   children: ReactNode;
 }
 
-const inter = Inter({ subsets: ['latin'] });
+const titilliumWeb = Titillium_Web({
+  weight: ['200', '300', '400', '600', '700', '900'],
+  style: ['normal', 'italic'],
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  variable: '--font-titillium-web',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,7 +26,7 @@ const RootLayout = (props: RootLayoutProps) => {
 
   return (
     <html lang="en" data-theme="light">
-      <body className={inter.className}>
+      <body className={titilliumWeb.className}>
         <Providers>{children}</Providers>
       </body>
     </html>
