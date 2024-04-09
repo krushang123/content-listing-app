@@ -1,0 +1,20 @@
+# Ignore directories
+node_modules/
+build/
+dist/
+coverage/
+packages/*/build/
+packages/*/dist/
+packages/*/coverage/
+
+# Ignore files
+package.json
+package-lock.json
+yarn.lock
+*.config.js
+*.d.ts
+*.map
+*.spec.*
+.env.*
+.DS_Store
+

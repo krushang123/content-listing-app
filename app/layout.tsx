@@ -1,7 +1,11 @@
-import type { Metadata } from "next"
+import { type ReactNode } from "react"
+
 import { Titillium_Web } from "next/font/google"
+
+import type { Metadata } from "next"
+
 import "./globals.css"
-import { ReactNode } from "react"
+
 import { Providers } from "@/src/providers"
 
 interface RootLayoutProps {
