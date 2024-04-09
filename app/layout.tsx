@@ -4,8 +4,6 @@ import { Titillium_Web } from "next/font/google"
 
 import type { Metadata } from "next"
 
-import "./globals.css"
-
 import { Providers } from "@/src/providers"
 
 interface RootLayoutProps {

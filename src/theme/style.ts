@@ -4,8 +4,8 @@ export const styles: Styles = {
   global: {
     body: {
       fontFamily: "body",
-      color: "chakra-body-text",
-      bg: "chakra-body-bg",
+      bg: "#171717",
+      color: "#FFFFFF",
       transitionProperty: "background-color",
       transitionDuration: "normal",
       lineHeight: "base",
@@ -15,11 +15,6 @@ export const styles: Styles = {
     },
     "*, *::before, &::after": {
       borderColor: "chakra-border-color",
-    },
-    h1: {
-      fontSize: "4xl",
-      textTransform: "capitalize",
-      color: "#002B53",
     },
   },
 }
