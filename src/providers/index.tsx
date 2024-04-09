@@ -1,15 +1,15 @@
-'use client';
+"use client"
 
-import { type ReactNode } from 'react';
+import { type ReactNode } from "react"
 
-import { ChakraUIProvider } from './chakra-provider';
+import { ChakraUIProvider } from "./chakra-provider"
 
 interface ProvidersProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export const Providers = (props: ProvidersProps) => {
-  const { children } = props;
+  const { children } = props
 
-  return <ChakraUIProvider>{children}</ChakraUIProvider>;
-};
+  return <ChakraUIProvider>{children}</ChakraUIProvider>
+}
