@@ -60,7 +60,7 @@ const HomePage = () => {
   return (
     <Stack spacing={8}>
       {posters !== null && posters.length > 0 && (
-        <ThumbnailGrid posters={filteredPosters} />
+        <ThumbnailGrid posters={filteredPosters} searchQuery={searchQuery} />
       )}
 
       {!isLoading && error !== null && (

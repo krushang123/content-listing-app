@@ -9,10 +9,11 @@ import ThumbnailCard from "./thumbnail-card"
 
 interface ThumbnailGridProps {
   posters: Poster[]
+  searchQuery: string
 }
 
 const ThumbnailGrid = (props: ThumbnailGridProps) => {
-  const { posters } = props
+  const { posters, searchQuery } = props
 
   const imageUrl = process.env.NEXT_PUBLIC_IMAGE_URL ?? "" // Retrieve the base image URL
   const fallbackImageUrl = process.env.NEXT_PUBLIC_FALLBACK_IMAGE_URL ?? "" // Retrieve the fallback image URL
@@ -27,6 +28,7 @@ const ThumbnailGrid = (props: ThumbnailGridProps) => {
           alt={item.name}
           name={item.name}
           fallbackImageUrl={fallbackImageUrl}
+          searchQuery={searchQuery}
         />
       ))}
     </SimpleGrid>

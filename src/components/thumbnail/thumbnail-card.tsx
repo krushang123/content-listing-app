@@ -5,17 +5,18 @@ import { useState } from "react"
 import { type StaticImport } from "next/dist/shared/lib/get-img-props"
 import Image from "next/image"
 
-import { Stack, AspectRatio, Text } from "@chakra-ui/layout"
+import { Stack, AspectRatio, Highlight, Text } from "@chakra-ui/layout"
 
 interface ThumbnailCardProps {
   src: string | StaticImport
   alt: string
   name: string
   fallbackImageUrl: string
+  searchQuery: string
 }
 
 const ThumbnailCard = (props: ThumbnailCardProps) => {
-  const { src, alt, name, fallbackImageUrl } = props
+  const { src, alt, name, fallbackImageUrl, searchQuery } = props
 
   const [isImageError, setIsImageError] = useState<boolean>(false)
 
@@ -40,7 +41,14 @@ const ThumbnailCard = (props: ThumbnailCardProps) => {
         />
       </AspectRatio>
 
-      <Text isTruncated>{name}</Text>
+      <Text isTruncated>
+        <Highlight
+          query={searchQuery}
+          styles={{ color: "orange", fontWeight: "bold" }}
+        >
+          {name}
+        </Highlight>
+      </Text>
     </Stack>
   )
 }
