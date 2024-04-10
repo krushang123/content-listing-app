@@ -6,10 +6,12 @@ import { Stack, Flex, Heading } from "@chakra-ui/layout"
 
 interface HeaderProps {
   categoryTitle: string
+  isInputVisible: boolean
+  showInput: () => void
 }
 
 const Header = (props: HeaderProps) => {
-  const { categoryTitle } = props
+  const { categoryTitle, isInputVisible, showInput } = props
 
   return (
     <Flex justify='space-between'>
@@ -30,13 +32,16 @@ const Header = (props: HeaderProps) => {
         <Heading as='h1'>{categoryTitle}</Heading>
       </Stack>
 
-      <IconButton
-        size='lg'
-        colorScheme='white'
-        variant='ghost'
-        aria-label='Search posters'
-        icon={<SearchIcon boxSize={6} />}
-      />
+      {!isInputVisible && (
+        <IconButton
+          size='lg'
+          colorScheme='white'
+          variant='ghost'
+          aria-label='Search posters'
+          icon={<SearchIcon boxSize={6} />}
+          onClick={showInput}
+        />
+      )}
     </Flex>
   )
 }
