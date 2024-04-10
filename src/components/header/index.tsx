@@ -57,18 +57,14 @@ const Header = () => {
       bgColor='#171717'
     >
       <Flex justify='space-between'>
-        <Stack direction='row'>
+        <Stack spacing={2} direction='row' align='center'>
           <IconButton
-            isRound
+            minW={0}
             size='lg'
             color='white'
-            _hover={{
-              color: "#171717",
-              bgColor: "white",
-            }}
-            variant='ghost'
+            variant='unstyled'
             aria-label='Navigate back'
-            icon={<ArrowBackIcon boxSize={6} />}
+            icon={<ArrowBackIcon boxSize={8} />}
             onClick={handleBackButtonClick}
           />
 
@@ -79,9 +75,10 @@ const Header = () => {
 
         {!isSearchVisible && (
           <IconButton
+            minW={0}
             size='lg'
-            colorScheme='white'
-            variant='ghost'
+            color='white'
+            variant='unstyled'
             aria-label='Search posters'
             icon={<SearchIcon boxSize={6} />}
             onClick={toggleSearchInputVisibility}
