@@ -47,7 +47,7 @@ const Header = () => {
       as='header'
       maxW={{ base: "full", xl: "1100px" }}
       mx='auto'
-      px={{ base: 6, sm: 10 }}
+      px={4}
       py={6}
       pos='sticky'
       top={0}

@@ -19,7 +19,7 @@ const ThumbnailGrid = (props: ThumbnailGridProps) => {
   const fallbackImageUrl = process.env.NEXT_PUBLIC_FALLBACK_IMAGE_URL ?? "" // Retrieve the fallback image URL
 
   return (
-    <SimpleGrid columns={3} spacingX={6} spacingY={10}>
+    <SimpleGrid columns={3} spacingX={4} spacingY={6}>
       {posters.map((item) => (
         <ThumbnailCard
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call

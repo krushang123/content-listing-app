@@ -16,7 +16,7 @@ const PrimaryLayout = (props: PrimaryLayoutProps) => {
 
   return (
     <>
-      <SkipNavLink id='skip-nav' zIndex='skipLink'>
+      <SkipNavLink id='skip-nav' zIndex='skipLink' color='black'>
         Skip to Content
       </SkipNavLink>
 
@@ -29,7 +29,7 @@ const PrimaryLayout = (props: PrimaryLayoutProps) => {
           id='content'
           maxW={{ base: "full", xl: "1100px" }}
           minH='100vh'
-          px={{ base: 6, sm: 10 }}
+          px={4}
           mx='auto'
         >
           {children}
