@@ -36,6 +36,12 @@ const Header = () => {
   const handleClearSearch = () => {
     dispatch(resetSearch())
   }
+
+  const handleBackButtonClick = () => {
+    // eslint-disable-next-line no-console
+    console.log("Back clicked")
+  }
+
   return (
     <Stack
       as='header'
@@ -63,6 +69,7 @@ const Header = () => {
             variant='ghost'
             aria-label='Navigate back'
             icon={<ArrowBackIcon boxSize={6} />}
+            onClick={handleBackButtonClick}
           />
 
           <Heading as='h1' noOfLines={1}>
