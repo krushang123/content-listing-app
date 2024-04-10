@@ -7,7 +7,7 @@ import { ArrowBackIcon, SearchIcon } from "@chakra-ui/icons"
 import { Stack, Flex, Heading } from "@chakra-ui/layout"
 
 import { useAppDispatch, useAppSelector } from "@/src/lib/hooks"
-import { selectPosters } from "@/src/store/posters/posters-slice"
+import { selectCategoryTitle } from "@/src/store/posters/posters-slice"
 import {
   resetSearch,
   selectSearchQuery,
@@ -21,8 +21,7 @@ import SearchInput from "./search-input"
 const Header = () => {
   const dispatch = useAppDispatch()
 
-  const { categoryTitle } = useAppSelector(selectPosters)
-
+  const categoryTitle = useAppSelector(selectCategoryTitle)
   const searchQuery = useAppSelector(selectSearchQuery)
   const isSearchVisible = useAppSelector(selectSearchVisibility)
 

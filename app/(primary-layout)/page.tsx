@@ -9,15 +9,24 @@ import AlertMessage from "@/src/components/alert-message"
 import Loader from "@/src/components/loader"
 import ThumbnailGrid from "@/src/components/thumbnail/thumbnail-grid"
 import { useAppDispatch, useAppSelector } from "@/src/lib/hooks"
-import { getPosters, selectPosters } from "@/src/store/posters/posters-slice"
+import {
+  getPosters,
+  selectError,
+  selectHasMorePages,
+  selectIsLoading,
+  selectPosters,
+  selectRequestedPageNumber,
+} from "@/src/store/posters/posters-slice"
 import { selectSearchQuery } from "@/src/store/search/search-slice"
 
 const HomePage = () => {
   const dispatch = useAppDispatch()
 
-  const { posters, requestedPageNumber, hasMorePages, isLoading, error } =
-    useAppSelector(selectPosters)
-
+  const posters = useAppSelector(selectPosters)
+  const requestedPageNumber = useAppSelector(selectRequestedPageNumber)
+  const hasMorePages = useAppSelector(selectHasMorePages)
+  const isLoading = useAppSelector(selectIsLoading)
+  const error = useAppSelector(selectError)
   const searchQuery = useAppSelector(selectSearchQuery)
 
   const { ref, inView } = useInView({

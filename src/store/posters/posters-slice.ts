@@ -75,6 +75,20 @@ const postersSlice = createSlice({
   },
 })
 
-export const selectPosters = (state: RootState) => state.posters
+export const selectPosters = (state: RootState) => state.posters.posters
+export const selectCategoryTitle = (state: RootState) =>
+  state.posters.categoryTitle
+export const selectTotalContentItems = (state: RootState) =>
+  state.posters.totalContentItems
+export const selectRequestedPageNumber = (state: RootState) =>
+  state.posters.requestedPageNumber
+export const selectRequestedPageSize = (state: RootState) =>
+  state.posters.requestedPageSize
+export const selectReturnedPageSize = (state: RootState) =>
+  state.posters.returnedPageSize
+export const selectHasMorePages = (state: RootState) =>
+  state.posters.hasMorePages
+export const selectIsLoading = (state: RootState) => state.posters.isLoading
+export const selectError = (state: RootState) => state.posters.error
 
 export default postersSlice.reducer
