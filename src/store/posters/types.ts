@@ -1,6 +1,6 @@
 export interface Poster {
   name: string
-  posterImage: string
+  "poster-image": string
 }
 
 export interface PosterItems {
@@ -9,11 +9,11 @@ export interface PosterItems {
 
 export interface Page {
   title: string
-  totalContentItems: number
-  pageNumRequested: number
-  pageSizeRequested: number
-  pageSizeReturned: number
-  contentItems: PosterItems
+  "total-content-items": string
+  "page-num-requested": string
+  "page-size-requested": string
+  "page-size-returned": string
+  "content-items": PosterItems
 }
 
 export interface PageData {

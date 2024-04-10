@@ -2,6 +2,8 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
+import { type RootState } from "@/src/lib/store"
+
 import { type PageData, type PostersState } from "./types"
 
 export const getPosters = createAsyncThunk(
@@ -14,7 +16,7 @@ export const getPosters = createAsyncThunk(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const data: PageData = await response.json()
 
-    return data.page.contentItems.content
+    return data.page["content-items"].content
   },
 )
 
@@ -45,5 +47,7 @@ const postersSlice = createSlice({
       })
   },
 })
+
+export const selectPosters = (state: RootState) => state.posters
 
 export default postersSlice.reducer

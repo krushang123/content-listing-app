@@ -1,19 +1,19 @@
 import { SimpleGrid } from "@chakra-ui/layout"
 
-import { type PageData } from "@/app/(primary-layout)/page"
+import { type Poster } from "@/src/store/posters/types"
 
 import ThumbnailCard from "./thumbnail-card"
 
 interface ThumbnailGridProps {
-  pageData: PageData
+  posters: Poster[]
 }
 
 const ThumbnailGrid = (props: ThumbnailGridProps) => {
-  const { pageData } = props
+  const { posters } = props
 
   return (
     <SimpleGrid columns={3} spacingX={6} spacingY={10}>
-      {pageData.page["content-items"]?.content.map((item, index) => (
+      {posters.map((item, index) => (
         <ThumbnailCard
           // eslint-disable-next-line react/no-array-index-key
           key={index}
