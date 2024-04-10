@@ -28,7 +28,7 @@ const initialState: PostersState = {
   returnedPageSize: 0,
   posters: [],
   hasMorePages: true,
-  isLoading: false,
+  isLoading: true,
   error: null,
 }
 

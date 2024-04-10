@@ -7,6 +7,7 @@ import { useInView } from "react-intersection-observer"
 
 import AlertMessage from "@/src/components/alert-message"
 import Loader from "@/src/components/loader"
+import NoDataMessage from "@/src/components/no-data-message"
 import ThumbnailGrid from "@/src/components/thumbnail/thumbnail-grid"
 import { useAppDispatch, useAppSelector } from "@/src/lib/hooks"
 import {
@@ -74,6 +75,10 @@ const HomePage = () => {
       )}
 
       {isLoading && <Loader />}
+
+      {!isLoading && error === null && filteredPosters.length === 0 && (
+        <NoDataMessage messageTitle='No Posters Found' />
+      )}
 
       <Box ref={ref} />
     </Stack>
