@@ -3,6 +3,7 @@
 import { type ReactNode } from "react"
 
 import { ChakraUIProvider } from "./chakra-provider"
+import ReduxProvider from "./redux-provider"
 
 interface ProvidersProps {
   children: ReactNode
@@ -11,5 +12,9 @@ interface ProvidersProps {
 export const Providers = (props: ProvidersProps) => {
   const { children } = props
 
-  return <ChakraUIProvider>{children}</ChakraUIProvider>
+  return (
+    <ReduxProvider>
+      <ChakraUIProvider>{children}</ChakraUIProvider>
+    </ReduxProvider>
+  )
 }
