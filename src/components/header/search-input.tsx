@@ -6,17 +6,20 @@ import { Button, ButtonGroup } from "@chakra-ui/button"
 import { Input } from "@chakra-ui/input"
 import { Flex } from "@chakra-ui/layout"
 
-interface HeaderSearchProps {
+interface SearchInputProps {
   searchQuery: string
-
   handleSearchChange: (event: ChangeEvent<HTMLInputElement>) => void
   handleClearSearch: () => void
-  hideInput: () => void
+  toggleSearchInputVisibility: () => void
 }
 
-const HeaderSearch = (props: HeaderSearchProps) => {
-  const { searchQuery, handleSearchChange, handleClearSearch, hideInput } =
-    props
+const SearchInput = (props: SearchInputProps) => {
+  const {
+    searchQuery,
+    handleSearchChange,
+    handleClearSearch,
+    toggleSearchInputVisibility,
+  } = props
 
   return (
     <Flex gap={6} justify='space-between'>
@@ -30,10 +33,10 @@ const HeaderSearch = (props: HeaderSearchProps) => {
 
       <ButtonGroup>
         <Button onClick={handleClearSearch}>Clear</Button>
-        <Button onClick={hideInput}>Hide</Button>
+        <Button onClick={toggleSearchInputVisibility}>Hide</Button>
       </ButtonGroup>
     </Flex>
   )
 }
 
-export default HeaderSearch
+export default SearchInput

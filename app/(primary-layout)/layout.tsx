@@ -5,6 +5,8 @@ import { type ReactNode } from "react"
 import { Container, Box } from "@chakra-ui/layout"
 import { SkipNavContent, SkipNavLink } from "@chakra-ui/skip-nav"
 
+import Header from "@/src/components/header"
+
 interface PrimaryLayoutProps {
   children: ReactNode
 }
@@ -18,6 +20,8 @@ const PrimaryLayout = (props: PrimaryLayoutProps) => {
         Skip to Content
       </SkipNavLink>
 
+      <Header />
+
       <Container as='main' maxW='100vw' p={0}>
         <SkipNavContent id='skip-nav' />
 
@@ -25,7 +29,7 @@ const PrimaryLayout = (props: PrimaryLayoutProps) => {
           id='content'
           maxW={{ base: "full", xl: "1100px" }}
           minH='100vh'
-          p={{ base: 6, sm: 10 }}
+          px={{ base: 6, sm: 10 }}
           mx='auto'
         >
           {children}
