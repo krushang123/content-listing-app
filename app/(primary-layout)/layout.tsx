@@ -28,7 +28,6 @@ const PrimaryLayout = (props: PrimaryLayoutProps) => {
         <Box
           id='content'
           maxW={{ base: "full", xl: "1100px" }}
-          minH='100vh'
           px={4}
           mx='auto'
         >

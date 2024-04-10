@@ -32,6 +32,7 @@ const HomePage = () => {
 
   const { ref, inView } = useInView({
     threshold: 0,
+    rootMargin: "10px",
   })
 
   const filteredPosters = useMemo(() => {
@@ -59,7 +60,7 @@ const HomePage = () => {
   }, [inView])
 
   return (
-    <Stack spacing={8}>
+    <Stack h='full' spacing={8}>
       {posters !== null && posters.length > 0 && (
         <ThumbnailGrid posters={filteredPosters} searchQuery={searchQuery} />
       )}
