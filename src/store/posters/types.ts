@@ -21,7 +21,13 @@ export interface PageData {
 }
 
 export interface PostersState {
+  categoryTitle: string
+  totalContentItems: number
+  requestedPageNumber: number
+  requestedPageSize: number
+  returnedPageSize: number
   posters: Poster[]
+  hasMorePages: boolean
   isLoading: boolean
   error: string | null
 }

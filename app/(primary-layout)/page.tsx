@@ -2,7 +2,8 @@
 
 import { useEffect } from "react"
 
-import { Stack } from "@chakra-ui/layout"
+import { Stack, Box } from "@chakra-ui/layout"
+import { useInView } from "react-intersection-observer"
 
 import AlertMessage from "@/src/components/alert-message"
 import Loader from "@/src/components/loader"
@@ -12,18 +13,34 @@ import { getPosters, selectPosters } from "@/src/store/posters/posters-slice"
 
 const HomePage = () => {
   const dispatch = useAppDispatch()
-  const { posters, isLoading, error } = useAppSelector(selectPosters)
+
+  const { posters, requestedPageNumber, hasMorePages, isLoading, error } =
+    useAppSelector(selectPosters)
+
+  const { ref, inView } = useInView({
+    threshold: 1,
+  })
 
   useEffect(() => {
     const fetchPosters = async () => {
-      await dispatch(getPosters(1))
+      const nextPageNum = requestedPageNumber + 1
+
+      await dispatch(getPosters(nextPageNum)) // Fetch posters for the current page
     }
 
-    fetchPosters()
-  }, [dispatch])
+    if (inView && hasMorePages) {
+      fetchPosters() // Fetch posters if in view or initially
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView])
 
   return (
     <Stack spacing={8}>
+      {posters !== null && posters.length > 0 && (
+        <ThumbnailGrid posters={posters} />
+      )}
+
       {!isLoading && error !== null && (
         <AlertMessage
           title='Error Fetching Posters'
@@ -36,9 +53,7 @@ const HomePage = () => {
 
       {isLoading && <Loader />}
 
-      {!isLoading && posters !== null && posters.length > 0 && (
-        <ThumbnailGrid posters={posters} />
-      )}
+      <Box ref={ref} />
     </Stack>
   )
 }
