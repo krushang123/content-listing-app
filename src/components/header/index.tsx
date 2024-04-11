@@ -37,6 +37,8 @@ const Header = () => {
     dispatch(resetSearch())
   }
 
+  // INFO: This component provides information about the back button click event.
+  // It currently logs a message to the console when the back button is clicked
   const handleBackButtonClick = () => {
     // eslint-disable-next-line no-console
     console.log("Back clicked")
