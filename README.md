@@ -7,6 +7,8 @@ a content listing app. It involves developing a responsive web application using
 modern web development technologies such as React 18+, Next.js 14+, TypeScript,
 Redux Toolkit, and Chakra UI.
 
+[Link to Content Listing Assignment](https://coderbyte.com/question/reactjs-content-listing-siyqayz53k)
+
 ## Project Description
 
 The goal of this project is to create a mobile-friendly content listing app
