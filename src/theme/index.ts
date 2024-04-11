@@ -1,7 +1,12 @@
 import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react"
 import { type Dict } from "@chakra-ui/utils"
 
-import { styles } from "./style"
+// Global style overrides
+import styles from "./styles"
+
+// Foundational style overrides
+
+// Component style overrides
 
 const customTheme: Dict = extendTheme(
   {
@@ -10,8 +15,13 @@ const customTheme: Dict = extendTheme(
       heading: "var(--font-titillium-web)",
       body: "var(--font-titillium-web)",
     },
+    // Other foundational style overrides go here
   },
-  {},
+  {
+    components: {
+      // Other components go here
+    },
+  },
   withDefaultColorScheme({
     colorScheme: "gray",
   }),
